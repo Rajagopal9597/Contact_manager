@@ -5,7 +5,7 @@ dotenv.config();
 mongoose.set('strictQuery',true);
 
 const connectDB=()=>{
-    return mongoose.connect("mongodb+srv://root:mongo9597DB@cluster0.nsz5wgf.mongodb.net/?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
+    return mongoose.connect(process.env.MONGO_URL,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
         console.log("Connected to DB");
     }).catch((err)=>console.log(err));
 }
